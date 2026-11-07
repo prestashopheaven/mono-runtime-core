@@ -1,0 +1,38 @@
+{
+    "name": "prestashopheaven/mono-runtime-core",
+    "description": "The core every PrestaHaven module uses: module lifecycle (install, uninstall, migrations, upgrades, tabs, configuration page), the command bus, the shared value objects and multistore. No external dependencies (D21).",
+    "version": "0.1.0",
+    "type": "project",
+    "license": "MIT",
+    "repositories": [],
+    "require": {
+        "php": ">=8.1"
+    },
+    "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "^1.2",
+        "phpcompatibility/php-compatibility": "^10.0@alpha",
+        "prestashopheaven/build-tools": "^1.0"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "platform": {
+            "php": "8.1.0"
+        },
+        "sort-packages": true,
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "extra": {
+        "prestashopheaven": {
+            "monorepo": {
+                "kind": "runtime",
+                "category": "core"
+            }
+        }
+    },
+    "scripts": {
+        "check": "ps-module mono check"
+    }
+}
