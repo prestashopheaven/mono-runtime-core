@@ -1,0 +1,7 @@
+{
+    "module_name": "heavenmonocore",
+    "display_name": "Core packages fixture",
+    "version": "1.0.0",
+    "distribution": "addons",
+    "fixture": "Test module of mono-runtime-core (docs/packages): runs the integration tests of the core packages in real shops. Never released."
+}

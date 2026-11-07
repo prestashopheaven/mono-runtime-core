@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS `{_DB_PREFIX_}heavenmonocore_item` (
+    `id_item` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `id_shop` INT UNSIGNED NOT NULL,
+    `name` VARCHAR(64) NOT NULL,
+    PRIMARY KEY (`id_item`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

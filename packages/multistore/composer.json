@@ -1,0 +1,45 @@
+{
+    "name": "prestashopheaven/runtime-multistore",
+    "description": "Multistore helpers of a PrestaHaven module: converts the module's shop constraint to and from PrestaShop's.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "George van Engers",
+            "email": "vanengers@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.1",
+        "prestashopheaven/runtime-shared-kernel": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "PrestaShopHeaven\\Runtime\\Multistore\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PrestaShopHeaven\\Runtime\\Multistore\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "1.x-dev"
+        },
+        "prestashopheaven": {
+            "kind": "runtime",
+            "use-when": "Infrastructure or a controller turns the module's ShopConstraint into PrestaShop's ShopConstraint (configuration per shop, grids, forms) or reads the shop context back into one.",
+            "keywords": [
+                "multistore",
+                "shop-constraint",
+                "shop-context",
+                "configuration-per-shop",
+                "shop-group"
+            ],
+            "integration-tested": [
+                "src/ShopConstraintMapper.php"
+            ]
+        }
+    }
+}

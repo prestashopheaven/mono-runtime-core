@@ -1,0 +1,13 @@
+# Back office: the page of the Configure button.
+services:
+  _defaults:
+    public: true
+
+  PrestaShopHeaven\MonoCore\Fixture\Controller\Admin\ConfigurationController:
+    arguments:
+      - '@prestashopheaven.heavenmonocore.command_bus'
+    tags:
+      - { name: controller.service_arguments }
+
+imports:
+  - { resource: ../common.yml }

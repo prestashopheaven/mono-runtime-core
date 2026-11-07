@@ -1,0 +1,16 @@
+# Services of the fixture for every container (back office, front office, webservice, console).
+services:
+  _defaults:
+    public: true
+
+  # The bus of runtime-cqrs under the module's own id, never under the shared class name.
+  prestashopheaven.heavenmonocore.command_bus:
+    class: PrestaShopHeaven\Runtime\Cqrs\ModuleCommandBus
+    public: true
+    arguments:
+      $handlers: !tagged_locator { tag: 'prestashopheaven.heavenmonocore.handler', index_by: 'command' }
+      $handlerTag: 'prestashopheaven.heavenmonocore.handler'
+
+  PrestaShopHeaven\MonoCore\Fixture\Application\Fixture\Query\GetAnswer\GetAnswerHandler:
+    tags:
+      - { name: 'prestashopheaven.heavenmonocore.handler', command: 'PrestaShopHeaven\MonoCore\Fixture\Application\Fixture\Query\GetAnswer\GetAnswerQuery' }

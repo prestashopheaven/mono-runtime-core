@@ -1,0 +1,7 @@
+heavenmonocore_configuration:
+  path: /heavenmonocore/configuration
+  methods: [GET]
+  defaults:
+    _controller: 'PrestaShopHeaven\MonoCore\Fixture\Controller\Admin\ConfigurationController::indexAction'
+    _legacy_controller: 'AdminHeavenmonocoreConfiguration'
+    _legacy_link: 'AdminHeavenmonocoreConfiguration'

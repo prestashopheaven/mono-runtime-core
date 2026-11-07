@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The fixture only has integration tests: vendor/bin/ps-module shops integration|run <version> (in a real shop).
+     They come from the fixture itself and from the core packages: composer install copies each package's tests/Integration
+     into tests/Packages (ps-module mono fixture-tests; Composer leaves tests/ out of vendor/). -->
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+         bootstrap="tests/Integration/bootstrap.php"
+         colors="true"
+         cacheDirectory=".cache/phpunit"
+         failOnRisky="true"
+         failOnWarning="true">
+    <testsuites>
+        <testsuite name="integration">
+            <directory>tests/Integration</directory>
+            <directory>tests/Packages</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
