@@ -1,7 +1,7 @@
 {
     "name": "prestashopheaven/mono-runtime-core",
     "description": "The core every PrestaHaven module uses: module lifecycle (install, uninstall, migrations, upgrades, tabs, configuration page), the command bus, the shared value objects and multistore. No external dependencies (D21).",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "type": "project",
     "license": "MIT",
     "repositories": [
@@ -11,10 +11,10 @@
             "options": {
                 "symlink": true,
                 "versions": {
-                    "prestashopheaven/runtime-cqrs": "1.0.0",
-                    "prestashopheaven/runtime-kit": "1.0.0",
-                    "prestashopheaven/runtime-multistore": "1.0.0",
-                    "prestashopheaven/runtime-shared-kernel": "1.0.0"
+                    "prestashopheaven/runtime-cqrs": "1.1.0",
+                    "prestashopheaven/runtime-kit": "1.1.0",
+                    "prestashopheaven/runtime-multistore": "1.1.0",
+                    "prestashopheaven/runtime-shared-kernel": "1.1.0"
                 }
             }
         }

@@ -2,6 +2,14 @@
 
 All packages of this monorepo share one version. Per package details: its own `CHANGELOG.md`.
 
+## 1.1.0
+
+- `runtime-kit` 1.1.0: tabs are synced with the definition on install and on every upgrade (`TabSynchronizer`,
+  `Installer::syncTabs()`): missing tabs are created, moved or changed tabs are put back, tabs no longer defined are
+  removed, and PrestaShop's copy `<parent>_MTR` of a module's own parent tab never appears. A module can now have its own
+  menu (a parent tab under `SELL`) and move its pages there in an upgrade without its own upgrade code.
+- Fixture module: an own menu under SELL with a child, and a route whose legacy controller is not a tab.
+
 ## 1.0.0
 
 - `runtime-kit` 1.0.0: `module-kit` 1.5.0 moved into the collection under the MIT license, plus: translated tabs in

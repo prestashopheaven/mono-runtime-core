@@ -36,7 +36,27 @@ final class ModuleDefinition extends AbstractModuleDefinition
 
     public const GENERATED_CONFIGURATION = ['HEAVENMONOCORE_TOKEN'];
 
+    /**
+     * An own menu (a parent under SELL with a visible child, TabSynchronizer of runtime-kit) and a hidden page. The
+     * route heavenmonocore_extra has its own legacy controller that is not a tab here: PrestaShop registers it, and the
+     * kit must keep it.
+     */
     public const TABS = [
+        [
+            'class_name' => 'AdminParentHeavenmonocore',
+            'route_name' => 'heavenmonocore_configuration',
+            'parent_class_name' => 'SELL',
+            'wording' => 'Core fixture menu',
+            'visible' => true,
+            'icon' => 'extension',
+        ],
+        [
+            'class_name' => 'AdminHeavenmonocoreItems',
+            'route_name' => 'heavenmonocore_configuration',
+            'parent_class_name' => 'AdminParentHeavenmonocore',
+            'wording' => 'Core fixture items',
+            'visible' => true,
+        ],
         [
             'class_name' => 'AdminHeavenmonocoreConfiguration',
             'route_name' => 'heavenmonocore_configuration',

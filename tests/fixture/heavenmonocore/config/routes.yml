@@ -5,3 +5,11 @@ heavenmonocore_configuration:
     _controller: 'PrestaShopHeaven\MonoCore\Fixture\Controller\Admin\ConfigurationController::indexAction'
     _legacy_controller: 'AdminHeavenmonocoreConfiguration'
     _legacy_link: 'AdminHeavenmonocoreConfiguration'
+
+heavenmonocore_extra:
+  path: /heavenmonocore/extra
+  methods: [GET]
+  defaults:
+    _controller: 'PrestaShopHeaven\MonoCore\Fixture\Controller\Admin\ConfigurationController::indexAction'
+    _legacy_controller: 'AdminHeavenmonocoreExtra'
+    _legacy_link: 'AdminHeavenmonocoreExtra'
