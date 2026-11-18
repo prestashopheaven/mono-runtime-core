@@ -115,6 +115,6 @@ final class Migrator
             return;
         }
         $where = $timestamp !== '' ? "migration $timestamp" : 'migrations in ' . $this->directory;
-        $this->lastError = trim($where . ': ' . ($this->exceptionMessage !== '' ? $this->exceptionMessage : \Db::getInstance()->getMsgError()));
+        $this->lastError = trim($where . ': ' . ($this->exceptionMessage !== '' ? $this->exceptionMessage : \Db::getInstance()->getMsgError()), " \n\r\t\v\0");
     }
 }

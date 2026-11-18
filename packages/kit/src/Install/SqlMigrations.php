@@ -79,7 +79,7 @@ final class SqlMigrations
             return false;
         }
         foreach (explode(';', str_replace('{_DB_PREFIX_}', $this->prefix, $contents)) as $query) {
-            $query = trim($query);
+            $query = trim($query, " \n\r\t\v\0");
             if ($query !== '' && !($this->execute)($query)) {
                 return false;
             }

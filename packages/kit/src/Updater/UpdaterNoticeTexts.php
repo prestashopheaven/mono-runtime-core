@@ -77,7 +77,7 @@ final class UpdaterNoticeTexts
      */
     public static function forLanguage(string $prestashopIso): array
     {
-        $iso = strtolower(trim($prestashopIso));
+        $iso = strtolower(trim($prestashopIso, " \n\r\t\v\0"));
         $iso = self::PRESTASHOP_ISO[$iso] ?? $iso;
 
         return array_combine(self::KEYS, self::TEXTS[$iso] ?? self::TEXTS['en']);

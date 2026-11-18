@@ -119,7 +119,7 @@ final class UpdaterNotice
     /** Whether this is a direct-sale copy (empty module_key); Addons copies have a module_key and get no bar or link. */
     public static function isDirectCopy(string $moduleKey): bool
     {
-        return '' === trim($moduleKey);
+        return '' === trim($moduleKey, " \n\r\t\v\0");
     }
 
     /**
@@ -131,17 +131,17 @@ final class UpdaterNotice
     public static function supportUrl(string $moduleName, string $moduleVersion, string $prestashopVersion, string $phpVersion): string
     {
         $query = [];
-        $name = strtolower(trim($moduleName));
+        $name = strtolower(trim($moduleName, " \n\r\t\v\0"));
         if (1 === preg_match('/^[a-z0-9_]{1,64}$/', $name)) {
             $query['module'] = $name;
         }
         foreach (['version' => $moduleVersion, 'ps' => $prestashopVersion] as $key => $value) {
-            $value = trim($value);
+            $value = trim($value, " \n\r\t\v\0");
             if (1 === preg_match('/^[0-9A-Za-z.+-]{1,32}$/', $value)) {
                 $query[$key] = $value;
             }
         }
-        if (1 === preg_match('/^(\d{1,2})\.(\d{1,2})(?:\D|$)/', trim($phpVersion), $match)) {
+        if (1 === preg_match('/^(\d{1,2})\.(\d{1,2})(?:\D|$)/', trim($phpVersion, " \n\r\t\v\0"), $match)) {
             $query['php'] = (int) $match[1] . '.' . (int) $match[2];
         }
 

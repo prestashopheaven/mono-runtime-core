@@ -53,7 +53,7 @@ final class UpdaterNoticeTextsTest extends TestCase
 
         self::assertSame(self::KEYS, array_keys($texts));
         foreach ($texts as $key => $text) {
-            self::assertNotSame('', trim($text), $key);
+            self::assertNotSame('', trim($text, " \n\r\t\v\0"), $key);
             if (\in_array($key, self::WITH_NAME, true)) {
                 self::assertSame(1, substr_count($text, '%s'), $key . ' has the module name once');
                 self::assertSame(1, substr_count($text, '%'), $key . ' has no other placeholder');
